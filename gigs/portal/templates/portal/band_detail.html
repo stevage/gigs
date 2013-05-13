@@ -2,6 +2,17 @@
 {% load maps %}
 {% load bands %}
 
+{% load search_results %}
+
+{% block sidebar %}
+<div class="sidebar-facets">
+
+<p class="nav-links">
+  &#x25c4;&nbsp;{% search_results %}
+</p>
+
+{% endblock %}
+
 {% block content %}
 <div id="bands-divider" class="span6">
   <h2>Band details</h2>
