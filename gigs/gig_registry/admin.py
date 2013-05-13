@@ -119,13 +119,12 @@ class LocationAutofillUUIDForm(AutofillUUIDForm):
 
 class LocationAdmin(TablibAdmin):
     form =  LocationAutofillUUIDForm
-    list_display = ['street_address', 'building_name', 'suburb', 'state', 'post_code', 'lat', 'lon']
-    list_filter = ('suburb', 'post_code', 'state', 'building_name')
+    list_display = ['street_address', 'suburb', 'state', 'post_code', 'lat', 'lon']
+    list_filter = ('suburb', 'post_code', 'state')
     fieldsets = [
             ('Address',
                 {'fields':
                     [
-                        'building_name',
                         'street_address',
                         'suburb',
                         'state',
@@ -153,7 +152,7 @@ class LocationAdmin(TablibAdmin):
         ]
 
     formats = ['csv', 'xls']
-    search_fields = ['street_address', 'suburb', 'post_code', 'state', 'building_name', 'comment']
+    search_fields = ['street_address', 'suburb', 'post_code', 'state', 'comment']
 
 admin.site.register(models.Band, BandAdmin)
 admin.site.register(models.Musician, MusicianAdmin)
